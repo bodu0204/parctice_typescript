@@ -126,6 +126,72 @@
 //console.log(Number.isNaN(nan));
 
 
+//2.4.6
+//import { createInterface } from "readline";
+//const lr = createInterface({
+//    input:process.stdin,
+//    output:process.stdout,
+//});
+//lr.question("名前を入れよ", (name:string)=>{
+//    const display_name1 = name || "名無し";
+//    const display_name2 = name ?? "default";
+//    const display_name3 = null ?? "default";
+//    const display_name4 = undefined ?? "default";
+//    console.log(`こんにちは'${display_name1}'さん`);
+//    console.log(`こんにちは'${display_name2}'さん`);
+//    console.log(`こんにちは'${display_name3}'さん`);
+//    console.log(`こんにちは'${display_name4}'さん`);
+//    lr.close();
+//});
+
+//2.4.7
+//import { createInterface } from "readline";
+//const lr = createInterface({
+//    input:process.stdin,
+//    output:process.stdout,
+//});
+//lr.question("数値を入力せよ", (str :string)=>{
+//    const num = Number(str);
+//    const massage = num >= 0 && num < 100 
+//    ? `${num}は0以上100未満です。`
+//    : `${num}は0以上100未満ではない。`;
+//    console.log(massage);
+//    lr.close()
+//});
+
+//2.4.8
+//import { createInterface } from "readline";
+//const lr = createInterface({
+//    input:process.stdin,
+//    output:process.stdout,
+//});
+//
+//lr.question("名前を入力せよ",(name :string)=>{
+//    name ||= "no_name";
+//    console.log(`名前は${name}。`);
+//    lr.close();
+//});
+
+//2.6
+for (let i = 1; i < 100; i++) {
+    switch(Number(!(i % 3)) | Number(!(i % 5)) << 1)
+    {
+        case 0b01:
+            console.log("Fizz");
+        break;
+        case 0b10:
+            console.log("Buzz");
+        break;
+        case 0b11:
+            console.log("FizzBuzz");
+        break;
+        default:
+            console.log(i);
+        break;
+    }
+}
+
+
 //3.3.2
 //type Animal = {
 //    age : number;
