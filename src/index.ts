@@ -2,6 +2,8 @@
 //const massage: string = "Hello World!";
 //console.log(massage);
 
+import { type } from "os";
+
 
 //2.1.1
 //const greeting = "hello, ";
@@ -173,23 +175,97 @@
 //});
 
 //2.6
-for (let i = 1; i < 100; i++) {
-    switch(Number(!(i % 3)) | Number(!(i % 5)) << 1)
-    {
-        case 0b01:
-            console.log("Fizz");
-        break;
-        case 0b10:
-            console.log("Buzz");
-        break;
-        case 0b11:
-            console.log("FizzBuzz");
-        break;
-        default:
-            console.log(i);
-        break;
-    }
-}
+//for (let i = 1; i < 100; i++) {
+//    switch(Number(!(i % 3)) | Number(!(i % 5)) << 1)
+//    {
+//        case 0b01:
+//            console.log("Fizz");
+//        break;
+//        case 0b10:
+//            console.log("Buzz");
+//        break;
+//        case 0b11:
+//            console.log("FizzBuzz");
+//        break;
+//        default:
+//            console.log(i);
+//        break;
+//    }
+//}
+
+//3.1.1
+//const obj = {
+//    foo: 123,
+//    bar: "hello word",
+//};
+//console.log(obj.foo);
+//console.log(obj.bar);
+
+//3.1.2
+//import { createInterface } from "readline"
+//const lr = createInterface({
+//    input:process.stdin,
+//    output:process.stdout,
+//})
+//lr.question("名前を入力せよ", (input:string)=>{
+//    const name = input?input:"名無し";
+//    const user = {
+//        name,
+//        name1:input?input:"名無し",
+//        age:20,
+//    }
+//    console.log(user.name);  
+//    console.log(user.name1);  
+//    console.log(user.age);
+//    lr.close();
+//});
+
+//3.1.3
+//const str = "hello"
+//const obj = {
+//    "foo": 123,
+//    "foo bar":-500,
+//    "→↑←↓":314,
+//    1:111,
+//    2.05:2005,
+//    [str + "world"]:"こんにちは世界"
+//}
+//console.log(obj.foo);
+//console.log(obj["foo"]);
+//console.log(obj["foo bar"]);
+//console.log(obj["→↑←↓"]);
+//console.log(obj[1]);
+//console.log(obj[2.05]);
+//console.log(obj["1"]);
+//console.log(obj["2.05"]);
+//console.log(obj.helloworld);
+
+//3.1.4
+//const user = {
+//    name:"tanabe",
+//    age:25,
+//};
+//user.age = 23;
+//console.log(user.age);
+//import { createInterface } from "readline";
+//const rl = createInterface({
+//    input:process.stdin,
+//    output:process.stdout,
+//});
+//const msg = {
+//    positive:"正の数",
+//    negative:"負の数または0",
+//}
+//rl.question('数値を入力せよ', (line :string)=>{
+//    const num = Number(line);
+//    console.log(msg[num>0?"positive":"negative"]);
+//    rl.close();
+//});
+//msg = {          //error
+//    positive:"+",
+//    negative:"- or 0",
+//}
+
 
 
 //3.3.2
@@ -208,3 +284,19 @@ for (let i = 1; i < 100; i++) {
 //console.log(animal.age);
 //human.age = 60;
 //console.log(animal.age);
+
+//4.3.1
+//type human = {
+//    name:string,
+//};
+//type student = {
+//    name:string,
+//    grade:number,
+//}
+//
+//const formstudent = (age:number):student=>({
+//    name:"someone",
+//    grade:age,
+//});
+//const f:(x:number)=>human = formstudent;
+//const h :human = f(20);
