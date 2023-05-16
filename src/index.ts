@@ -292,11 +292,15 @@ import { type } from "os";
 //type student = {
 //    name:string,
 //    grade:number,
-//}
-//
+//}//
+
 //const formstudent = (age:number):student=>({
 //    name:"someone",
 //    grade:age,
 //});
 //const f:(x:number)=>human = formstudent;
+//const fv:(x:number)=>void = formstudent;
 //const h :human = f(20);
+//fv(20);
+//console.log(h);
+
