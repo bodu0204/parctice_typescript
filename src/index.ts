@@ -285,6 +285,102 @@ import { type } from "os";
 //human.age = 60;
 //console.log(animal.age);
 
+//3.3.3
+//type User = {name: string; age: number};
+//const u: User = {
+//    name: "blyu",
+//    age: 26,
+//    //telnumber: "08077084516",
+//};
+//
+//const uu = {
+//    name: "blyu",
+//    age: 21,
+//    telnumber: "08077084516",
+//}
+//const us : User= uu;
+
+//3.4.1
+//type User<T> = {
+//    name: string;
+//    child:T;
+//}
+//
+//type Family<Parent,Child> = {
+//    mother: Parent;
+//    father: Parent;
+//    child: Child;
+//};
+
+//3.4.2
+//const obj: Family<number,string> = {
+//    mother: 0,
+//    father: 0,
+//    child: "10000",
+//};
+////const obj2: Family = {
+////    mother: 0,
+////    father: 0,
+////    child: "10000",
+////};
+
+//3.4.3
+//type HasName = {
+//    name: string;
+//};
+//type Family< Parent extends HasName, Child extends HasName> = {
+//    mother: Parent;
+//    father: Parent;
+//    baby: Child;
+//};
+////type home = Family<number,string>;
+//type Animal = {
+//    name: string;
+//}
+//type Human = {
+//    name: string;
+//    age: number;
+//}
+//type T = Family<Animal,Human>;
+
+//3.4.4
+//type Human = {
+//    name: string;
+//    age: number;
+//}
+//type Animal = {
+//    name: string;
+//}
+//type Family<Parent = Animal, Child extends Animal = Animal> = {
+//    mother: Parent;
+//    father: Parent;
+//    baby: Child;    
+//}
+//type s = Family<string>;
+//type t = Family<string,Animal>;
+//type u = Family;
+
+//4.5.1
+//const arr = [0,123,-456 * 100];
+//console.log(arr);
+//const arr2 = [0, "123", 456];
+//console.log(arr2);
+//const arr3 = [0, "123", 456, ...arr];
+//console.log(arr3);
+
+//4.5.2
+//const arr = [0,123,-456 * 100];
+//console.log(arr[0]);
+//console.log(arr[1]);
+//console.log(arr);
+//arr[1] = 42;
+//console.log(arr);
+//arr = [42,42,42,];
+
+//4.5.3
+const arr:Number[] = [0,123,-456 * 100];
+//const arr2:String[] = [0,123,-456 * 100];
+
 //4.3.1
 //type human = {
 //    name:string,
@@ -292,15 +388,12 @@ import { type } from "os";
 //type student = {
 //    name:string,
 //    grade:number,
-//}//
-
+//}
+//
 //const formstudent = (age:number):student=>({
 //    name:"someone",
 //    grade:age,
 //});
 //const f:(x:number)=>human = formstudent;
-//const fv:(x:number)=>void = formstudent;
 //const h :human = f(20);
-//fv(20);
-//console.log(h);
 
