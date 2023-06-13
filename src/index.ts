@@ -360,7 +360,7 @@ import { type } from "os";
 //type t = Family<string,Animal>;
 //type u = Family;
 
-//4.5.1
+//3.5.1
 //const arr = [0,123,-456 * 100];
 //console.log(arr);
 //const arr2 = [0, "123", 456];
@@ -368,7 +368,7 @@ import { type } from "os";
 //const arr3 = [0, "123", 456, ...arr];
 //console.log(arr3);
 
-//4.5.2
+//3.5.2
 //const arr = [0,123,-456 * 100];
 //console.log(arr[0]);
 //console.log(arr[1]);
@@ -377,9 +377,217 @@ import { type } from "os";
 //console.log(arr);
 //arr = [42,42,42,];
 
-//4.5.3
-const arr:Number[] = [0,123,-456 * 100];
+//3.5.3
+//const arr:Number[] = [0,123,-456 * 100];
 //const arr2:String[] = [0,123,-456 * 100];
+
+//3.5.4
+//const arr:readonly number[] = [1,10,100];
+////arr[1] = 42;
+
+//3.5.5
+//const arr = [1,10,100];
+//arr.push(1000);
+//console.log(arr);
+//console.log(arr.includes(10))
+//console.log(arr.includes(20))
+//console.log(arr.length)
+////arr.push("foobar");
+////console.log(arr.includes("foobar"))
+//
+//const arr: readonly number[] = [1,10,100];
+//arr.push(1000);
+
+//3.5.6
+//const arr = [1,10,100];
+//for(let elm of arr){
+//	elm *= 10; 
+//	console.log(elm);
+//}
+//console.log(arr);
+
+//3.5.7
+//const taple: [string, number] = ['foo', 0];
+//const str = taple[0];
+//const num = taple[1];
+//type arr = [name: string, age: number];
+//const taple2 : arr= ["goge",0];
+
+//3.6.1
+//const obj = {
+//	foo: "hello",
+//	bar: "world",
+//}
+//const {foo,bar} = obj;
+//console.log(foo);
+//console.log(bar);
+//const {
+//	foo: foo_plus,
+//	bar: bar_plus,
+//} = obj
+//console.log(foo_plus);
+//console.log(bar_plus);
+
+//3.6.2
+//const nested = {
+//	num: 123,
+//	obj:{
+//		foo:"hello",
+//		bar:"word",
+//	}
+//}
+//const {num, obj:{foo,bar}} = nested;
+//console.log(num);
+//console.log(foo);
+//console.log(bar);
+////console.log(obj);
+
+//3.6.3
+//const arr = [1,2,4,8,16,32];
+//const [first, second, therd] = arr;
+//console.log(first);
+//console.log(second);
+//console.log(therd);
+//const arr2 = [{number: 1,},{number: 2,},{number: 4,},{number: 8,},{number: 16,},];
+//const [first, second, therd] = arr2;
+//const [{number}] = arr2;
+//console.log(number);
+//console.log(first);
+//console.log(second);
+//console.log(therd);
+//const [,foo,,bar,,baz] = arr;
+//console.log(foo);
+//console.log(bar);
+//console.log(baz);
+
+//3.6.4
+//type obj = {foo?:number};
+//let obj1: obj = {};
+//const {foo} = obj1;
+//console.log(foo);
+//const {foo:foo2 = 500} = obj1;
+//console.log(foo2);
+//const nullpbj = {foo:null};
+//const {foo = 500} = nullpbj;
+//console.log(foo);
+//type Nestedobj = {
+//	obj?:{
+//		foo:number,
+//	}
+//};
+//const nested1: Nestedobj = {};
+//const {obj:{foo} = {foo:500}} = nested1;
+////const {obj:{foo}} = nested1;
+//console.log(foo);
+
+//3.6.5
+//const obj = {
+//	foo: 123,
+//	bar: "string",
+//	baz: false,
+//};
+//const {bar, ...rest} = obj;
+//console.log(bar);
+//console.log(rest)
+//const arr = [1,2,3,4,5,6,7,8];
+//const [first, second ,...rest] = arr;
+//console.log(first);
+//console.log(second);
+//console.log(rest);
+//const [,,x, y ,...z] = arr;
+//console.log(x);
+//console.log(y);
+//console.log(z);
+
+//3.7.1
+//const d = new Date();
+//console.log(d);
+//const d2 = new Date("2020-02-03T15:00:00+09:00");
+//console.log(d2);
+//const date = new Date("2020-02-03T15:00:00+09:00");
+//const time = date.getTime();
+//console.log(time);
+//const date2 = new Date(time);
+//console.log(date2);
+
+//3.7.2
+//const r :RegExp = /ab+c/;
+//console.log(r.test("abbbbc"));
+//console.log(r.test("hello abc world"));
+//console.log(r.test("ABC"));
+//console.log(r.test("こんにちは"));
+
+//3.7.3
+//console.log("Hello, abbbbc world abc".replace(/ab+c/,"foobar"));
+//console.log("Hello, abbbbc world abc".replace(/ab+c/g,"foobar"));
+//const result = "Hello, abbbbc world abc".match(/a(b+)c/);
+//if (result !== null){
+//	for (let elm in result){
+//		console.log();
+//		console.log(elm);
+//		console.log(result[elm]);
+//	}
+//}
+//
+//const result1 = "Hello, abbbbc world abc".match(/a(?<wordname>b+)c/);
+//if (result1 !== null){
+//	for (let elm in result1){
+//		console.log();
+//		console.log(elm);
+//		console.log(result1[elm]);
+//	}
+//}
+
+//3.7.4
+//const map: Map<string, Number>  = new Map();
+//map.set("foo", 123);
+//console.log(map.get("foo"));
+//console.log(map.get("bar"));
+
+//3.7.5
+//const str = "Hello World!";
+//console.log(str.length);
+//type HasLength = {length:number};
+//const obj:HasLength = "hello world";
+//let val:{} = 123;
+//val = "foobar";
+//val = {num:123};
+////val = null;
+////val = undefined;
+
+//3.8.1
+//type User = {
+//	name:string,
+//	age:number,
+//	premiumUser:boolean,
+//}
+//const data :string = `
+//uhyo,26,1
+//Jhon Smith,17,0
+//Mary Sue,14,1
+//`
+//const users:User[] = [];
+//const lines = data.match(/([^\n].*)\n/g);
+//if (lines !== null){
+//	for(const line of lines){
+//		const elms = line.match(/([^,]*),([0-9]*),([01])\n/);
+//		if (elms !== null){
+//				const a_user :User = {
+//				name: elms[1],
+//				age: Number(elms[2]),
+//				premiumUser: Boolean(Number(elms[3])),
+//			}
+//			users.push(a_user);
+//		}
+//	}
+//}
+//for(const user of users){
+//	if (user.premiumUser){
+//		console.log(`${user.name}(${user.age}) is Premium User`)
+//	}else{
+//		console.log(`${user.name}(${user.age}) is not Premium User`)
+//	}
+//}
 
 //4.3.1
 //type human = {
